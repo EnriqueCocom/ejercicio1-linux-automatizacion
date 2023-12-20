@@ -39,7 +39,7 @@ if dpkg -l | grep git; then
     echo -e "Git ya se encuentra instalado..."
 else
 echo -e "\n${LYELLOW}instalando GIT ...${NC}"
-    apt install git -y
+    apt-get install git -y
 fi
 
 
@@ -202,7 +202,6 @@ echo ""
 
 echo -e "Pruebe la pagina ingrasando a: http://localhost o http://ip"
 
-echo -e "\n${LGREEN}Fin del despliegue del proyecto... ${NC}"
 
 echo ""
 echo "|| ========================================= ||"
@@ -258,8 +257,10 @@ echo ""
 echo "|| ========================================= ||"
 echo ""
 
-echo -e "Enviando notificacion a Discord"
+echo -e "\n${LGREEN}Enviando notificacion a Discord... ${NC}"
 
 echo ""
 echo "|| ========================================= ||"
 echo ""
+
+echo -e "\n${LGREEN}Fin del despliegue del proyecto... ${NC}"
