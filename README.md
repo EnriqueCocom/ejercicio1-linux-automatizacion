@@ -43,14 +43,6 @@ chmod +x enriquecc-deploy.sh
 ./enriquecc-deploy.sh 
 ```
 
-2. Desinstalar Proyecto
-```
-chmod +x uninstall.sh 
-```
-
-```
-./uninstall.sh 
-```
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
