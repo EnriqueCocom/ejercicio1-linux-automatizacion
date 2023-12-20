@@ -4,6 +4,7 @@ GREEN='\033[1;32m'
 NC='\033[0m'
 BLUE='\033[0;34m'
 YELLOW='\033[1;33m'
+DIR="ejercicio1-linux-automatizacion"
 
 function delete_files {
     echo -e "\n${GREEN}Limpiando el directorio de archivos estaticos\n${NC}"
@@ -17,7 +18,7 @@ function uninstall_git {
 
 function uninstall_apache {
     echo -e "\n${GREEN}Desinstalando Apache2\n${NC}"
-    apt remove -y --purge apache2
+    apt-get remove -y --purge apache2*
 }
 
 function uninstall_mariadb {
@@ -29,6 +30,7 @@ function uninstall_mariadb {
 function uninstall_php {
     echo -e "\n${GREEN}Desinstalando PHP\n${NC}"
     apt remove -y --purge php libapache2-mod-php php-mysql php-mbstring php-zip php-gd php-json php-curl
+    apt-get remove -y --purge php*
 }
 
 if dpkg -l "git" > /dev/null 2>&1; then 
@@ -55,4 +57,11 @@ if dpkg -l "php" "libapache2-mod-php" "php-mysql" "php-mbstring" "php-zip" "php-
 else
     echo "PHP ya está desinstalado"
 fi
+
+
+if [ -d "$DIR" ]; then
+	  # Eliminar el directorio del proyecto
+	    rm -rf ${DIR}
+fi
+
 echo -e "\n${YELLOW}Desinstalacion completada!!!\n${NC}"
